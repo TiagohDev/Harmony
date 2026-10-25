@@ -1,0 +1,325 @@
+/* 2. BASE DO SITE (FUNDO GLOBAL) */
+body {
+    background-image: linear-gradient(rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0.85)), url('../assets/img/fundo-sala.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--texto-claro);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+/* 3. CABEÇALHO */
+header {
+    background-color: #ffffff; /* Branco puro e sólido */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sombra bem mais forte para separar do fundo */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo-img {
+    height: 80px;
+    object-fit: contain;
+}
+
+.menu-navegacao {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000000; /* Preto absoluto para dar muito contraste no menu */
+    font-weight: 700; /* Letras mais grossas */
+    text-transform: uppercase;
+    font-size: 15px; /* Levemente maior */
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--vermelho-harmony); }
+.header-spacer { flex: 1; }
+
+/* 4. SOBRE NÓS */
+.section-sobre {
+    padding: 100px 0 60px;
+    background: transparent;
+}
+
+.sobre-conteudo h1 {
+    color: #ffffff; /* Deixando o título principal branco para contrastar mais */
+    margin-bottom: 20px;
+    font-size: 3rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9); /* Sombra preta bem forte atrás da letra */
+}
+.sobre-conteudo p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #ffffff; /* Branco absoluto */
+    font-weight: 500;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.9); /* Ajuda a ler caso caia sobre uma parte clara da foto */
+}
+
+.section-sobre .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza a imagem e o texto no meio da tela */
+    text-align: center;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.hero-image img {
+    max-width: 800px; /* Limita a largura para não ficar gigante */
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5); /* Adiciona uma sombra elegante na imagem */
+}
+.estatisticas {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: center;
+    /* Fundo escuro novo */
+    background-color: rgba(0, 0, 0, 0.75); 
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.estatisticas h3 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    color: #ff4a5a; /* Um vermelho ligeiramente mais claro e vibrante para brilhar no fundo escuro */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+/* 5. CARROSSEL DE PROJETOS */
+.section-projetos {
+    background: transparent;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section-projetos h2, .section-avaliacoes h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: #fff;
+    border-bottom: 3px solid var(--vermelho-harmony); 
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.carrossel-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 2px solid var(--cinza-harmony);
+}
+
+.carrossel-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.projeto-slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+.projeto-slide.active {
+    opacity: 1; visibility: visible; z-index: 1;
+}
+
+.imagem-wrapper {
+    width: 100%; height: 100%; overflow: hidden;
+}
+
+.imagem-wrapper img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.carrossel-wrapper:hover .imagem-wrapper img { transform: scale(1.08); }
+
+.legenda-projeto {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%;
+    background: rgba(194, 41, 52, 0.9);
+    color: #fff;
+    padding: 20px;
+    font-size: 1.2rem;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    z-index: 2;
+}
+
+.carrossel-wrapper:hover .legenda-projeto { transform: translateY(0); }
+
+.btn-carrossel {
+    background-color: var(--cinza-harmony);
+    color: white;
+    border: 2px solid #fff;
+    width: 50px; height: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    z-index: 10;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-carrossel:hover {
+    background-color: var(--vermelho-harmony);
+    border-color: var(--vermelho-harmony);
+}
+
+.btn-carrossel.prev { left: 20px; }
+.btn-carrossel.next { right: 20px; }
+
+/* 6. AVALIAÇÕES */
+.section-avaliacoes {
+    padding: 60px 0 100px;
+    background: transparent;
+    text-align: center;
+}
+
+.avaliacoes-grid {
+    display: flex; gap: 30px; justify-content: center;
+}
+
+.avaliacao-card {
+    width: 30%;
+    /* Fundo escuro novo */
+    background-color: rgba(0, 0, 0, 0.75); 
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.estrelas {
+    color: #ffb400; 
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.avaliacao-card p {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #ffffff; 
+    line-height: 1.5;
+}
+
+.avaliacao-card strong {
+    color: var(--vermelho-harmony); 
+    font-size: 1.1rem;
+}
+/* 7. RODAPÉ */
+footer {
+    background-color: #000000; /* Preto absoluto para pesar a base do site */
+    border-top: 5px solid var(--vermelho-harmony); /* Linha vermelha mais grossa */
+    color: #fff;
+    padding: 50px 0 20px;
+}
+
+.footer-container {
+    display: flex; justify-content: space-between;
+    margin-bottom: 40px; flex-wrap: wrap; gap: 30px;
+}
+
+.footer-logo img {
+    height: 70px; background-color: white;
+    padding: 10px; border-radius: 5px;
+}
+
+.footer-links ul { list-style: none; margin-top: 15px; }
+
+.footer-links h4, .footer-contato h4 {
+    margin-bottom: 15px; font-size: 1.2rem; color: #fff;
+    font-family: 'Playfair Display', serif;
+}
+
+.footer-links a {
+    color: #ccc; text-decoration: none; line-height: 2;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover { color: var(--vermelho-harmony); }
+.footer-contato p { color: #ccc; margin-bottom: 15px; }
+.footer-contato p i { margin-right: 8px; color: var(--cinza-harmony); }
+
+.redes-sociais { display: flex; flex-direction: column; gap: 12px; }
+
+.contato-link {
+    color: #ccc; text-decoration: none; display: flex; align-items: center;
+    gap: 10px; font-size: 1rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.contato-link i { font-size: 1.4rem; }
+.contato-link:hover { transform: translateX(5px); color: #fff; }
+.contato-link:hover .fa-whatsapp { color: #25D366; }
+.contato-link:hover .fa-instagram { color: #E1306C; }
+.contato-link:hover .fa-envelope { color: var(--vermelho-harmony); }
+
+.footer-bottom {
+    text-align: center; border-top: 1px solid #333;
+    padding-top: 20px; color: #888; font-size: 0.9rem;
+}
+
+/* 8. RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .header-container { flex-direction: column; gap: 15px; }
+    .header-spacer { display: none; }
+    .logo { justify-content: center; }
+    .estatisticas, .avaliacoes-grid, .footer-container { flex-direction: column; text-align: center; }
+    .avaliacao-card { width: 100%; }
+    .carrossel-container { height: 300px; }
+    .btn-carrossel { width: 40px; height: 40px; font-size: 16px; }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony - Ambientes Planejados</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Adicionando o FontAwesome para os ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    <!-- Adicionando a nova fonte para o nome da empresa -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="container header-container">
+            <!-- 1. Logo na esquerda -->
+            <a href="#" class="logo">
+                <img src="assets/img/logo.jpg" alt="Harmony Ambientes Planejados" class="logo-img">
+            </a>
+            
+            <!-- 2. Menu perfeitamente centralizado -->
+            <nav class="menu-navegacao">
+                <ul class="nav-links">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+
+            <!-- 3. Espaçador invisível na direita (para manter o equilíbrio do flexbox) -->
+            <div class="header-spacer"></div>
+        </div>
+    </header>
+
+    <!-- PRIMEIRA PARTE: SOBRE NÓS E ESTATÍSTICAS -->
+    <section id="sobre" class="section-sobre">
+        <div class="container">
+            <!-- Imagem de destaque (Hero) -->
+            <div class="hero-image">
+                <!-- Coloque uma foto bonita de um ambiente aqui -->
+                <img src="assets/Img/imagen_sb.webp" alt=" planejados de alto padrão">
+            </div>
+            
+            <div class="sobre-conteudo">
+                <h1>Harmonia e Qualidade em Cada Detalhe</h1>
+                <p>Na Harmony, transformamos espaços em verdadeiros lares. Somos especialistas em móveis planejados que unem design sofisticado, durabilidade e funcionalidade. Nosso compromisso é entregar não apenas armários, mas soluções inteligentes que se adaptam ao seu estilo de vida.</p>
+                
+                <div class="estatisticas">
+                    <div class="dado">
+                        <h3>+2.500</h3>
+                        <p>Armários Montados</p>
+                    </div>
+                    <div class="dado">
+                        <h3>+10</h3>
+                        <p>Cidades no DF atendidas (Plano Piloto, Águas Claras, Taguatinga, etc.)</p>
+                    </div>
+                    <div class="dado">
+                        <h3>100%</h3>
+                        <p>Satisfação e Garantia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- SEGUNDA PARTE: CARROSSEL DE PROJETOS -->
+    <section id="projetos" class="section-projetos">
+        <div class="container">
+            <h2>Nossos Projetos</h2>
+            
+            <div class="carrossel-wrapper">
+                <button class="btn-carrossel prev" onclick="moverCarrossel(-1)">&#10094;</button>
+                
+                <div class="carrossel-container" id="carrossel">
+                    <!-- Slide 1 -->
+                    <div class="projeto-slide active">
+                        <div class="imagem-wrapper">
+                            <!-- Troque o link pelas suas fotos -->
+                            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Cozinha">
+                        </div>
+                        <div class="legenda-projeto">Cozinha Moderna em Águas Claras</div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="projeto-slide">
+                        <div class="imagem-wrapper">
+                            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Quarto">
+                        </div>
+                        <div class="legenda-projeto">Dormitório Casal no Plano Piloto</div>
+                    </div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="projeto-slide">
+                        <div class="imagem-wrapper">
+                            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Sala">
+                        </div>
+                        <div class="legenda-projeto">Home Theater no Noroeste</div>
+                    </div>
+                </div>
+
+                <button class="btn-carrossel next" onclick="moverCarrossel(1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TERCEIRA PARTE: AVALIAÇÕES -->
+    <section id="avaliacoes" class="section-avaliacoes">
+        <div class="container">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="avaliacoes-grid">
+                <div class="avaliacao-card">
+                    <div class="estrelas">★★★★★</div>
+                    <p>"Fiz minha cozinha em Águas Claras e ficou impecável. A montagem foi rápida e a qualidade do MDF é excelente."</p>
+                    <strong>- Mariana S.</strong>
+                </div>
+                <div class="avaliacao-card">
+                    <div class="estrelas">★★★★★</div>
+                    <p>"Atendimento de primeira! Cumpriram o prazo certinho no meu apartamento no Noroeste. Recomendo muito a Harmony."</p>
+                    <strong>- Carlos M.</strong>
+                </div>
+                <div class="avaliacao-card">
+                    <div class="estrelas">★★★★★</div>
+                    <p>"Transformaram minha sala. O projeto 3D ficou idêntico à realidade. Os montadores são muito caprichosos."</p>
+                    <strong>- Juliana P.</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+   <!-- RODAPÉ -->
+    <footer id="contato">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="assets/img/logo.jpg" alt="Harmony Ambientes Planejados">
+            </div>
+            
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#projetos">Projetos Recentes</a></li>
+                    <li><a href="#avaliacoes">Avaliações</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contato">
+                <h4>Fale Conosco</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Atendemos todo o DF</p>
+                
+                <div class="redes-sociais">
+                    <!-- Link do WhatsApp (Mude o número no href) -->
+                    <a href="https://wa.me/5561999999999" target="_blank" class="contato-link" title="Falar no WhatsApp">
+                        <i class="fab fa-whatsapp"></i> (61) 99999-9999
+                    </a>
+                    
+                    <!-- Link do Instagram -->
+                    <a href="https://instagram.com/suamarcenaria" target="_blank" class="contato-link" title="Nosso Instagram">
+                        <i class="fab fa-instagram"></i> @harmonyplanejados
+                    </a>
+                    
+                    <!-- Link do E-mail -->
+                    <a href="mailto:contato@harmonymoveis.com.br" class="contato-link" title="Enviar E-mail">
+                        <i class="fas fa-envelope"></i> contato@harmonymoveis.com.br
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Harmony Ambientes Planejados. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
